@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
+<title>Nomz.us</title>
+<script type="text/javascript"  src="js/platform-test.js"           ></script>
+<script type="text/javascript"  src="js/jquery-1.11.3.min.js"       ></script>
+<script type="text/javascript"  src="js/jquery.mobile-1.4.5.min.js" ></script>
+<link   type="text/css"         href="css/jquery.mobile-1.4.5.css"  rel="stylesheet" />
+<script type="text/javascript"  src="cordova.js"                    ></script>
+<script type="text/javascript"  src="js/index.js"                   ></script>
+<script>
+    var nLeft = 0;
+    var nRight = 0;
+</script>
+<style>
+    .small-margin {
+        margin-bottom: 8px;
+        margin-top: 8px;
+    }
+</style>
+</head>
+<body>
+<div data-role="page" id="home">
+    <!--div data-role="header"><h1>Game Score</h1></div-->
+    <div role="main" class="ui-content" style="padding-top: 0px; padding-left: 0px; padding-right: 0px; padding-bottom: 0px;">
+        <div class="ui-grid-a">
+            <!-- --------------------------------------------------- -->
+            <div class="ui-block-a">
+                <div class="ui-block-a"><div class="ui-bar ui-bar-a">Player 1</div></div>
+                <div class="ui-block-b"><div class="ui-bar ui-bar-a" id="divLeft">0</div></div>
+                
+                <div>
+                    <table class="ui-bar-a" id="keypadLeft" style="display: block; -khtml-user-select: none;">
+                        <tr><td><a data-role="button" data-theme="b" class="numberLeft small-margin">7</a></td><td><a data-role="button" data-theme="b" class="numberLeft small-margin">8</a></td><td><a data-role="button" data-theme="b" class="numberLeft small-margin">9</a></td><td><input style="background: white; color: black;" type="text" readonly="readonly" id="inputLeft" data-role="e" class="small-margin" /></td></tr>
+                        <tr><td><a data-role="button" data-theme="b" class="numberLeft small-margin">4</a></td><td><a data-role="button" data-theme="b" class="numberLeft small-margin">5</a></td><td><a data-role="button" data-theme="b" class="numberLeft small-margin">6</a></td><td><a data-role="button" data-theme="e" class="delLeft small-margin">CE</a></td></tr>
+                        <tr><td><a data-role="button" data-theme="b" class="numberLeft small-margin">1</a></td><td><a data-role="button" data-theme="b" class="numberLeft small-margin">2</a></td><td><a data-role="button" data-theme="b" class="numberLeft small-margin">3</a></td><td><a data-role="button" data-theme="e" class="clearLeft small-margin">C</a></td></tr>
+                        <tr><td>&nbsp;</td><td><a data-role="button" data-theme="b" class="zeroLeft small-margin">0</a></td><td>&nbsp;</td><td><a data-role="button" data-theme="e" class="addLeft small-margin">Add</a></td></tr>
+                    </table>
+                </div>
+            </div>
+            <!-- --------------------------------------------------- -->
+            <div class="ui-block-b">
+                <div class="ui-block-a"><div class="ui-bar ui-bar-a">Player 2</div></div>
+                <div class="ui-block-b"><div class="ui-bar ui-bar-a" id="divRight">0</div></div>
+                <div>
+                    <table class="ui-bar-a" id="keypadRight" style="display: block; -khtml-user-select: none;">
+                        <tr><td><a data-role="button" data-theme="b" class="numberRight small-margin">7</a></td><td><a data-role="button" data-theme="b" class="numberRight small-margin">8</a></td><td><a data-role="button" data-theme="b" class="numberRight small-margin">9</a></td><td><input style="background: white; color: black;" type="text" readonly="readonly" id="inputRight" data-role="e" class="small-margin" /></td></tr>
+                        <tr><td><a data-role="button" data-theme="b" class="numberRight small-margin">4</a></td><td><a data-role="button" data-theme="b" class="numberRight small-margin">5</a></td><td><a data-role="button" data-theme="b" class="numberRight small-margin">6</a></td><td><a data-role="button" data-theme="e" class="delRight small-margin">CE</a></td></tr>
+                        <tr><td><a data-role="button" data-theme="b" class="numberRight small-margin">1</a></td><td><a data-role="button" data-theme="b" class="numberRight small-margin">2</a></td><td><a data-role="button" data-theme="b" class="numberRight small-margin">3</a></td><td><a data-role="button" data-theme="e" class="clearRight small-margin">C</a></td></tr>
+                        <tr><td>&nbsp;</td><td><a data-role="button" data-theme="b" class="zeroRight small-margin">0</a></td><td>&nbsp;</td><td><a data-role="button" data-theme="e" class="addRight small-margin">Add</a></td></tr>
+                    </table>
+                </div>
+            </div>
+            <!-- --------------------------------------------------- -->
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+app.initialize();
+
+function onDeviceReady() {
+}
+
+document.addEventListener("deviceready", onDeviceReady, false);
+
+$(document).ready(function(){});
+
+$('#inputLeft').click(function(){
+    //$('#keypadLeft').fadeToggle('fast');
+});
+$('#inputRight').click(function(){
+    //$('#keypadRight').fadeToggle('fast');
+});
+$('.addLeft').click(function(){
+    if (!isNaN(parseInt($('#inputLeft').val()))) {
+        nLeft += parseInt($('#inputLeft').val());
+        document.getElementById("divLeft").innerHTML = nLeft;
+        $('#inputLeft').val('');
+    }
+});
+$('.addRight').click(function(){
+    if (!isNaN(parseInt($('#inputRight').val()))) {
+        nRight += parseInt($('#inputRight').val());
+        document.getElementById("divRight").innerHTML = nRight;
+        $('#inputRight').val('');
+    }
+});
+$('.numberLeft').click(function(){
+    if (!isNaN($('#inputLeft').val())) {
+        if (parseInt($('#inputLeft').val()) == 0) {
+            $('#inputLeft').val($(this).text());
+        } else {
+            $('#inputLeft').val($('#inputLeft').val() + $(this).text());
+        }
+    }
+});
+$('.numberRight').click(function(){
+    if (!isNaN($('#inputRight').val())) {
+        if (parseInt($('#inputRight').val()) == 0) {
+            $('#inputRight').val($(this).text());
+        } else {
+            $('#inputRight').val($('#inputRight').val() + $(this).text());
+        }
+    }
+});
+$('.delLeft').click(function(){
+    $('#inputLeft').val($('#inputLeft').val().substring(0,$('#inputLeft').val().length - 1));
+});
+$('.delRight').click(function(){
+    $('#inputRight').val($('#inputRight').val().substring(0,$('#inputRight').val().length - 1));
+});
+$('.clearLeft').click(function(){
+    $('#inputLeft').val('');
+});
+$('.clearRight').click(function(){
+    $('#inputRight').val('');
+});
+$('.zeroLeft').click(function(){
+    if (!isNaN($('#inputLeft').val())) {
+        if (parseInt($('#inputLeft').val()) != 0) {
+            $('#inputLeft').val($('#inputLeft').val() + $(this).text());
+        }
+    }
+});
+$('.zeroRight').click(function(){
+    if (!isNaN($('#inputRight').val())) {
+        if (parseInt($('#inputRight').val()) != 0) {
+            $('#inputRight').val($('#inputRight').val() + $(this).text());
+        }
+    }
+});
+
+</script>
+</body>
+</html>
