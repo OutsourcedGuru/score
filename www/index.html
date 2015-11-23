@@ -46,7 +46,7 @@
             <!-- --------------------------------------------------- -->
             <div class="ui-block-b">
                 <div class="ui-block-a"><div class="ui-bar ui-bar-a">Player 2</div></div>
-                <div class="ui-block-b"><div class="ui-bar ui-bar-a" id="divRight">0</div></div>
+                <div class="ui-block-b"><div class="ui-bar ui-bar-a" id="divRight">0</div><div><a data-role="button" class="Reset">Reset</a></div></div>
                 <div>
                     <table class="ui-bar-a" id="keypadRight" style="display: block; -khtml-user-select: none;">
                         <tr><td><a data-role="button" data-theme="b" class="numberRight small-margin">7</a></td><td><a data-role="button" data-theme="b" class="numberRight small-margin">8</a></td><td><a data-role="button" data-theme="b" class="numberRight small-margin">9</a></td><td><input style="background: white; color: black;" type="text" readonly="readonly" id="inputRight" data-role="e" class="small-margin" /></td></tr>
@@ -71,11 +71,12 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 $(document).ready(function(){});
 
-$('#inputLeft').click(function(){
-    //$('#keypadLeft').fadeToggle('fast');
-});
-$('#inputRight').click(function(){
-    //$('#keypadRight').fadeToggle('fast');
+$('#Reset').click(function(){
+    nLeft = nRight = 0;
+    document.getElementById("divRight").innerHTML = nLeft;
+    document.getElementById("divRight").innerHTML = nRight;
+    $('#inputLeft').val('');
+    $('#inputRight').val('');
 });
 $('.addLeft').click(function(){
     if (!isNaN(parseInt($('#inputLeft').val()))) {
