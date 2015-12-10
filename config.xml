@@ -1,6 +1,6 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="guru.outsourced.score" version="1.0.2">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="guru.outsourced.score" version="1.0.3">
   <name>Score</name>
-  <description>Two-person PhoneGap app for scoring, say, a Scrabble game.</description>
+  <description>Two-person PhoneGap app for scoring, say, a Scrabble game from your phone.</description>
   <content src="index.html"/>
   <preference name="permissions" value="none"/>
   <preference name="orientation" value="landscape"/>

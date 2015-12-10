@@ -1,5 +1,5 @@
 # Score
-Two-person PhoneGap app for scoring, say, a Scrabble game
+Two-person PhoneGap app for scoring, say, a Scrabble game from your smart phone
 
 I built this application so that my girlfriend and I could score our Scrabble games without relying upon her to... :cough: *occasionally* do the math.
 
@@ -9,9 +9,13 @@ I built this application so that my girlfriend and I could score our Scrabble ga
 
 You can use this as a quickstart to PhoneGap programming.  It includes the necessary style and JavaScript libraries and a minimalized configuration for the least amount of permissions so that your users will trust it.  Clone this code and then create your own cross-platform phone app.
 
+### PhoneGap
+
+[PhoneGap](http://docs.phonegap.com/getting-started/1-install-phonegap/desktop/) is an open source framework for quickly building cross-platform mobile apps using HTML5, Javascript and CSS.  You won't need to learn Objective-C, .Net or Java to write your phone app.
+
 ### Testing in Development
 
-I've found that the [PhoneGap Developer App](http://app.phonegap.com) is great for iterative testing of apps before actually building them for production.  You load the **Desktop App** program on your development workstation and point to your folder to serve up the application.  You then pair this by downloading and running the **PhoneGap Developer App** for your phone.  You run this app and point it to the URL that's being served up.
+I've found that the [PhoneGap Developer App](http://app.phonegap.com) is great for iterative testing of apps before actually building them for production.  You load the **Desktop App** program on your development workstation and point to your folder to serve up the application.  You then complete the pairing by downloading and running the **PhoneGap Developer App** as the client for your phone.  You run this app and point it to the URL that's being served up.
 
 The Desktop App will detect changes to your code as you work on it, recompile and push these changes to your phone within seconds.
 
