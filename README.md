@@ -62,3 +62,8 @@ The initial version of Score includes PhoneGap support for the following platfor
 
 * The app currently assumes a Landscape orientation and is best started in this mode.
 * There currently isn't a way of reversing an addition if you make a mistake and then press Add.  You can, though, simply remember the two Player's scores, reset the game and then re-enter what they're supposed to be and continue play.
+
+|Donate||Cryptocurrency|
+|:-----:|---|:--------:|
+| ![eth-receive](https://user-images.githubusercontent.com/15971213/40564950-932d4d10-601f-11e8-90f0-459f8b32f01c.png) || ![btc-receive](https://user-images.githubusercontent.com/15971213/40564971-a2826002-601f-11e8-8d5e-eeb35ab53300.png) |
+|Ethereum||Bitcoin|
